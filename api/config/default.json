@@ -1,0 +1,92 @@
+{
+    "dbConnection": "mongodb://localhost:27017/wesleyWallet",
+    "bcryptSaltRounds": 10,
+    "btc": {
+        "protocol": "http",
+        "path": "/",
+        "port": 18332,
+        "host": "localhost",
+        "username": "bit_user",
+        "password": "12345678"
+    },
+    "bch": {
+        "protocol": "http",
+        "path": "/",
+        "port": 18222,
+        "host": "localhost",
+        "username": "bit_user",
+        "password": "12345678"
+    },
+    "xrp": {
+        "protocol": "wss",
+        "path": "/",
+        "port": 51233,
+        "host": "s.altnet.rippletest.net",
+        "username": "",
+        "password": "",
+        "uri": "wss://s.altnet.rippletest.net:51233"
+    },
+    "namecoin": {
+        "protocol": "http",
+        "path": "/",
+        "port": 18222,
+        "host": "167.99.48.7",
+        "username": "bit_user",
+        "password": "a4213460fee4faa0ee11aabf8e5ea68e1c723a0b99e63212551579f21e3b02fc"
+    },
+    "zcash": {
+        "protocol": "http",
+        "path": "/",
+        "port": 18222,
+        "host": "159.89.190.248",
+        "username": "bit_user",
+        "password": "a4213460fee4faa0ee11aabf8e5ea68e1c723a0b99e63212551579f21e3b02fc"
+    },
+    "ltc": {
+        "protocol": "http",
+        "path": "/",
+        "port": 19332,
+        "host": "localhost",
+        "username": "bit_user",
+        "password": "12345678"
+    },
+    "eth": {
+        "protocol": "http",
+        "path": "",
+        "port": 8545,
+        "host": "localhost",
+        "wsPort": 8546,
+        "username": "bit_user",
+        "password": "12345678"
+    },
+    "cryptocoins": [
+        "btc",
+        "bch",
+        "zcash",
+        "ltc",
+        "namecoin",
+        "eth",
+        "debc",
+        "gersh",
+        "xrp"
+    ],
+    "wallettypes": [
+        "normal",
+        "multisig"
+    ],
+    "contracts": {
+        "debc": {
+            "address":"0x499121e9367b3c7d52f41315cd8606691b088d26",
+            "gas": 100000,
+            "unlocktime": 5000,
+            "web3Uri": "ws://localhost:8546"
+        },
+
+        "gersh": {
+            "address":"0x70326e13a3b3f85e9ced341d8de78cbb91df5d81",
+            "gas": 100000,
+            "unlocktime": 5000,
+            "web3Uri": "ws://localhost:8546"
+        }
+    }
+}

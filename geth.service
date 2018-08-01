@@ -1,0 +1,10 @@
+[Unit]
+Description=Ethereum go client
+
+[Service]
+Type=simple
+ExecStart=geth --lightserv 25 --lightpeers 50 --testnet --rpc --rpcport 8545 --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3 2>%h/.ethereum/geth.log
+Restart=always
+
+[Install]
+WantedBy=default.target

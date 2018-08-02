@@ -19,8 +19,8 @@ const transferAmount = async (coin_type, from, to, amount, options) => {
         case 'debc':
             tx = await wLib.debc.transferAmount(from, to, amount, { password: options.password });
             break;
-        case 'gerth':
-            tx = await wLib.gerth.transferAmount(from, to, amount, { password: options.password });
+        case 'gersh':
+            tx = await wLib.gersh.transferAmount(from, to, amount, { password: options.password  });
             break;
         case 'xrp':
             tx = await wLib.xrp.transferAmount(from, to, amount, { password: options.password });

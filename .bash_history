@@ -1226,3 +1226,76 @@ sudo bitcoin-cli stop
 sudo bitcoind -datadir=/mnt/volume_lon1_01/.bitcoin -daemon -testnet
 tail -f debug.log 
 ls
+cd frontend/
+npm start
+ps -ef | grep geth
+cd ~/.ethereum
+ls
+du -sh testnet/
+du -s testnet/
+cd api/
+npm start
+top
+cd frontend/
+git commit -m "first commit"
+git remote add origin git@github.com:Gershon-A/wallet-betta.git
+git push -u origin master
+cd ..
+cd BitWallet/
+ln -s /home/dev/fronted fronted
+ll
+ln -s /home/dev/api api
+git init 
+ln  /home/dev/api /home/dev/BitWallet/Api
+ln -s /home/dev/api /home/dev/BitWallet/Api
+ll
+rm Api
+ll
+rm fronted 
+ln -s /home/dev/fronted /home/dev/BitWallet/Fronted
+ll
+cd ..
+ps -aux | grep ng
+cd frontend/
+nohup npm start
+ps -aux | grep ng
+npm start
+cd api/
+npm start
+cd api/
+npm start
+cd api/
+npm start
+sudo service geth restart
+sudo service geth status
+ps -ef | grep geth
+sudo service geth status
+ps -ef | grep geth
+sudo service geth stop
+sudo geth --testnet --rpc --rpcaddr "0.0.0.0" --rpcport "8545" --rpccorsdomain "*" --rpcapi "db,eth,net,web3,personal,web3" 
+nano /lib/systemd/system/geth.service
+geth  --testnet --ws --wsport 8546 --wsorigins * --rpc --rpcaddr "0.0.0.0" --rpcport "8545" --rpccorsdomain "*" --rpcapi "eth,net,web3,admin,personal"
+sudo geth  --testnet --ws --wsport 8546 --wsorigins * --rpc --rpcaddr "0.0.0.0" --rpcport "8545" --rpccorsdomain "*" --rpcapi "eth,net,web3,admin,personal"
+sudo geth --dev --ws --wsorigins * --rpc --rpccorsdomain "*" --rpcaddr "0.0.0.0"  --mine --rpcapi "eth,web3,personal,net,miner,admin,debug" 
+sudo geth  --testnet --ws --wsport 8546 --wsorigins 127.0.0.1 --rpc --rpcaddr "0.0.0.0" --rpcport "8545" --rpccorsdomain "*" --rpcapi "eth,net,web3,admin,personal"
+cd api/
+npm start
+clear
+npm start
+ps -ef | grep 3000
+ps -aux | grep 3000
+ps -ef | grep 3000
+npm start
+ps -ef | grep node
+sudo kill 20778
+npm start
+ps -ef | grep node
+sudo kill 20779
+ps -ef | grep node
+npm start
+npm start -m
+npm --migrate start 
+node -m server.js 
+node --migrate server.js
+npm start -m
+npm start 

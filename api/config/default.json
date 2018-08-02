@@ -83,9 +83,9 @@
         },
 
         "gersh": {
-            "address":"0x70326e13a3b3f85e9ced341d8de78cbb91df5d81",
+            "address":"0x0a4fB7268983c9daC0d5F7fA8cA60D97B12c7fCa",
             "gas": 100000,
-            "unlocktime": 5000,
+            "unlocktime": 15000,
             "web3Uri": "ws://localhost:8546"
         }
     }

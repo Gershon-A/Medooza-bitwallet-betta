@@ -204,6 +204,7 @@ const updateWalletsAndGetBalance = async (user) => {
  * @returns {JSON} transaction Object
  */
 exports.transact = async (req, res, next) => {
+    //console.log(req);
     try {
         if (!req.body.coin_type) throw new Error('Coin Type is required.');
         let from, to = req.body.address, amount = req.body.amount, password;
@@ -214,12 +215,12 @@ exports.transact = async (req, res, next) => {
             password: from[coin_type].password
         });
         let transaction = new tModel();
-        transaction.tx = tx;
+        transaction.txid = tx;
         transaction.to_address = to;
         transaction.user = req.user._id;
         transaction.amount = amount;
-        transaction.coin_type = coin_type;
-        // await transaction.save();
+        transaction.coin = coin_type;
+        await transaction.save();
         res.sendResponse({ transaction }, 200, 'Transaction is successfull.');
     }
     catch (ex) {

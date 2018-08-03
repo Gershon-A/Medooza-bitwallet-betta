@@ -1299,3 +1299,34 @@ node -m server.js
 node --migrate server.js
 npm start -m
 npm start 
+supervisorctl 
+sudo supervisorctl 
+ps -ef | grep node
+history
+cd api/
+npm start
+ll
+npm i -g service-systemd
+sudo npm i -g service-systemd
+sudo service-systemd -a -n wallet-api -c /home/dev/api node --harmony ./server.js
+sudo service wallet-api status
+sudo service wallet-api start
+sudo service wallet-api status
+sudo service wallet-api start 
+sudo service wallet-api status
+sudo /home/dev/api node --harmony ./server.js
+ps -ef | grep server.js
+cat /etc/systemd/system/wallet-api.service 
+sudo nano /etc/systemd/system/wallet-api.service 
+sudo service wallet-api start 
+systemctl daemon-reload
+sudo service wallet-api status
+tail -f /var/log/syslog
+sudo service wallet-api start 
+sudo service wallet-api status
+sudo nano /etc/systemd/system/wallet-api.service 
+sudo service wallet-api restart
+sudo systemctl daemon-reload
+sudo service wallet-api restart
+sudo service wallet-api status
+sudo nano /etc/systemd/system/wallet-api.service 

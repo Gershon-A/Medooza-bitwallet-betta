@@ -3,3 +3,8 @@ remote-bit-wallet.code-workspace
 API.zip
 .ssh
 .npm
+.cache
+.node-gyp
+.Xauthority
+.bash_history
+.gitignore

@@ -40,6 +40,29 @@
                     <button type="submit" class="btn btn-theme">Send</button>
                   </div>
                 </form>
+                <div *ngIf="wallet.coin_type === 'gersh'">
+                  <b>How to use this page?</b>
+                  <br />
+                  <ul class="user-steps">
+                    <li>
+                      <b>Step 1:</b>&nbsp; Enter the recipient's GERSH address in the first input box above.
+                      <br/>
+                      <i>Tip: Use this address for testing: 0x687422eea2cb73b5d3e242ba5456b782919afc85
+                      </i>
+                    </li>
+                    <li>
+                      <b>Step 2:</b>&nbsp; Enter the GERSH amount to send.</li>
+                    <li>
+                      <b>Step 3:</b>&nbsp; Click SEND</li>
+                    <li>
+                      <b>Step 4:</b>&nbsp; As soon as you click SEND, a transaction id will be generated. Click
+                      <a routerLink="/transaction" target="_blank" class="blue-text">
+                        <u>HERE</u>
+                      </a> to open the transactions page. You will see the transaction id there, present as a link. Clicking on
+                      the link will open the block explorer site that shows the status of the transaction. </li>
+
+                  </ul>
+                </div>               
                 <div *ngIf="wallet.coin_type === 'btc'">
                   <b>How to use this page?</b>
                   <br />
@@ -132,29 +155,7 @@
 
                   </ul>
                 </div>
-                <div *ngIf="wallet.coin_type === 'gersh'">
-                  <b>How to use this page?</b>
-                  <br />
-                  <ul class="user-steps">
-                    <li>
-                      <b>Step 1:</b>&nbsp; Enter the recipient's GERSH address in the first input box above.
-                      <br/>
-                      <i>Tip: Use this address for testing: 0x687422eea2cb73b5d3e242ba5456b782919afc85
-                      </i>
-                    </li>
-                    <li>
-                      <b>Step 2:</b>&nbsp; Enter the GERSH amount to send.</li>
-                    <li>
-                      <b>Step 3:</b>&nbsp; Click SEND</li>
-                    <li>
-                      <b>Step 4:</b>&nbsp; As soon as you click SEND, a transaction id will be generated. Click
-                      <a routerLink="/transaction" target="_blank" class="blue-text">
-                        <u>HERE</u>
-                      </a> to open the transactions page. You will see the transaction id there, present as a link. Clicking on
-                      the link will open the block explorer site that shows the status of the transaction. </li>
 
-                  </ul>
-                </div>
                 <div *ngIf="wallet.coin_type === 'bch'">
                   <b>How to use this page?</b>
                   <br />

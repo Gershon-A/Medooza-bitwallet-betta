@@ -15,6 +15,29 @@
               </ul>
               <ng-template ngFor let-wallet [ngForOf]="wallets">
                 <div id="{{wallet.coin_type}}" class="col tab-content">
+                    <ul class="user-steps" *ngIf="wallet.coin_type==='gersh'">
+                        <li>
+                          <b class="green-text">Wallet Balance : </b>
+                          <b>{{wallet.confirmed_amount}}</b>
+                        </li>
+                        <li>
+                          How to receive this token to your Wallet?
+                        </li>
+                        <li>
+                            To receive this ERC20 token to your wallet here, you would need to first transfer it from another wallet, Exchange etc. ( as there are no Faucet sites for this yet )
+                        </li>
+                        <li>
+                          Step 1: Copy your Wallet address provided below:
+                        </li>
+                        <li>
+                          <b class="green-text">Your wallet address</b>:
+                          <b>{{wallet.main_address}}</b>
+                        </li>
+                        <li>Step 2: Open an live exchange where this ERC20 token is traded. Paste the address inside.</li>
+                        <li>Step 3: Click the 'Send' button ( or the respective button present in the exchange )</li>
+                        <li>Step 4: Wait for sometime for the network confirmations to happen.</li>
+                        <li>Step 5: Click on the REFRESH WALLET BALANCE button below to see if you have received the ERC20 token sent from the faucet site.</li>
+                      </ul>
                   <ul class="user-steps" *ngIf="wallet.coin_type==='btc'">
                     <li>
                       <b class="green-text">Wallet Balance : </b>
@@ -152,29 +175,7 @@
                     <li>Step 4: Wait for sometime for the network confirmations to happen.</li>
                     <li>Step 5: Click on the REFRESH WALLET BALANCE button below to see if you have received the ERC20 token sent from the faucet site.</li>
                   </ul>
-                  <ul class="user-steps" *ngIf="wallet.coin_type==='gersh'">
-                    <li>
-                      <b class="green-text">Wallet Balance : </b>
-                      <b>{{wallet.confirmed_amount}}</b>
-                    </li>
-                    <li>
-                      How to receive this token to your Wallet?
-                    </li>
-                    <li>
-                        To receive this ERC20 token to your wallet here, you would need to first transfer it from another wallet, Exchange etc. ( as there are no Faucet sites for this yet )
-                    </li>
-                    <li>
-                      Step 1: Copy your Wallet address provided below:
-                    </li>
-                    <li>
-                      <b class="green-text">Your wallet address</b>:
-                      <b>{{wallet.main_address}}</b>
-                    </li>
-                    <li>Step 2: Open an live exchange where this ERC20 token is traded. Paste the address inside.</li>
-                    <li>Step 3: Click the 'Send' button ( or the respective button present in the exchange )</li>
-                    <li>Step 4: Wait for sometime for the network confirmations to happen.</li>
-                    <li>Step 5: Click on the REFRESH WALLET BALANCE button below to see if you have received the ERC20 token sent from the faucet site.</li>
-                  </ul>
+
 
                   <ul class="user-steps" *ngIf="wallet.coin_type==='xrp'">
                     <li>

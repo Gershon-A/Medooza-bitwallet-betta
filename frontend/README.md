@@ -1,6 +1,6 @@
 # WalletFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 5.6.0 
 
 ## Development server
 
@@ -60,12 +60,138 @@ start bitcoin : bitcoind -datadir=/mnt/volume_lon1_01/.bitcoin -daemon -testnet
 start bitcoincash : bitcoinCashd -daemon -datadir=/mnt/volume_lon1_01/.bitcoinCash -testnet
 start litecoin : litecoind -daemon -datadir=/mnt/volume_lon1_01/.litecoin -testnet
 Bitcoin config : /mnt/volume_lon1_01/.bitcoin/bitcoin.conf
-BitcoinCash config : /mnt/volume_lon1_01/.bitcoinCash/bitcoin.conf
-Litecoin config : /mnt/volume_lon1_01/.litecoin/litecoin.conf
+daemon=1
+server=1
+listen=1
+testnet=1
+rpcuser=bit_user
+rpcpassword=12345678
 
+BitcoinCash config : /mnt/volume_lon1_01/.bitcoinCash/bitcoin.conf
+daemon=1
+server=1
+listen=0
+testnet=1
+rpcuser=bit_user
+rpcpassword=12345678
+rpcport=18222
+
+Litecoin config : /mnt/volume_lon1_01/.litecoin/litecoin.conf
+daemon=1
+server=1
+listen=1
+testnet=1
+rpcuser=bit_user
+rpcpassword=12345678
  ### Bitcoin-cli
- root@wallet:~# bitcoin-cli -testnet -rpcpassword=12345678 -rpcuser=bit_user getbalance
+root@wallet:~# bitcoin-cli -testnet -rpcpassword=12345678 -rpcuser=bit_user getbalance
 5.70320765
-root@wallet:~# bitcoin-cli -testnet -rpcpassword=12345678 -rpcuser=bit_user getbalance 2MxWkUxiLuMBM3Mrp1rW7XKMP5StDvtEzEd
+root@wallet:~# bitcoin-cli -testnet -rpcpassword=12345678 -rpcuser=bit_user getbalance 
 0.00000000
 root@wallet:~# bitcoin-cli -testnet -rpcpassword=12345678 -rpcuser=bit_user getmininginfo
+ ### nginx frontend
+ #server {
+  #listen 4200;
+  #listen [::]:4200;
+
+  #server_name bitwallet.medooza.network;
+  #  root           /home/dev/frontend/dist;
+  #  index          index.html;
+  #  try_files $uri /index.html;
+
+
+#}
+server {
+# To compiled distributed version
+  listen 8880;
+  listen [::]:8880;
+
+  server_name bitwallet.medooza.network;
+    root           /home/dev/frontend/dist;
+    index          index.html;
+    try_files $uri /index.html;
+
+location @app {
+  proxy_pass http://localhost:3000$request_uri;
+}
+
+location / {
+  try_files $uri $uri/ @app;
+  error_page 405 @app;
+}
+
+}
+server {
+  listen 8080;
+  listen [::]:8080;
+
+  server_name bitwallet.medooza.network;
+
+  location / {
+      proxy_pass http://localhost:3000/;
+      proxy_buffering off;
+      proxy_set_header X-Real-IP $remote_addr;
+
+
+  }
+}
+# Bitcoin
+server {
+  listen 8081;
+  listen [::]:8081;
+
+  server_name bitwallet.medooza.network;
+
+  location / {
+      proxy_pass http://localhost:18332/;
+      proxy_buffering off;
+      proxy_set_header X-Real-IP $remote_addr;
+
+
+  }
+}
+# Bitcoin chache
+server {
+  listen 8082;
+  listen [::]:8082;
+
+  server_name bitwallet.medooza.network;
+
+  location / {
+      proxy_pass http://localhost:18222/;
+      proxy_buffering off;
+      proxy_set_header X-Real-IP $remote_addr;
+
+
+  }
+}
+# Litecoin
+server {
+  listen 8083;
+  listen [::]:8083;
+
+  server_name bitwallet.medooza.network;
+
+  location / {
+      proxy_pass http://localhost:19332/;
+      proxy_buffering off;
+      proxy_set_header X-Real-IP $remote_addr;
+
+
+  }
+}
+#EtH
+server {
+  listen 8084;
+  listen [::]:8084;
+
+  server_name bitwallet.medooza.network;
+
+  location / {
+      proxy_pass http://localhost:8545/;
+      proxy_buffering off;
+      proxy_set_header X-Real-IP $remote_addr;
+
+
+  }
+}
